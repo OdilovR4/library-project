@@ -1,0 +1,27 @@
+### POST creating book
+POST localhost:8080/book
+Content-Type: application/json
+
+{
+  "author": "Yildiz",
+  "title": "Izlash"
+}
+
+
+### Get all
+GET localhost:8080/book
+
+### Get by Id
+GET localhost:8080/book/53e3c388-4de3-4340-b44d-6cd8e9213e42
+
+### Delete by id
+DELETE localhost:8080/book/8d114a66-a414-4653-92ff-7fa87834b469
+
+### Update
+PUT localhost:8080/book/8d114a66-a414-4653-92ff-7fa87834b469
+Content-Type: application/json
+
+{
+  "title": "seni izlab",
+  "author": "alibek"
+}

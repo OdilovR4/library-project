@@ -1,0 +1,8 @@
+### Create student book
+GET localhost:8080/student_book
+Content-Type: application/json
+
+{
+  ""
+
+}

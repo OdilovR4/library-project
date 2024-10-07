@@ -1,0 +1,62 @@
+********************  Library Project ********************
+
+Do project using Spring Boot (Rest api).
+Controller + Service
+For database use List based storage.
+
+Book (id,title,author, publishYear)
+Student (id, name, surname,phone, createdDate)
+StudentBook (id,studentId,bookId,createdDate,Status,returnedDate)
+
+Status -> Enum -> TAKEN, RETURNED
+
+Write following API list;
+
+1. Book
+    1.POST [.../book/] - for creating book.
+	        Request ->  {title,author, publishYear}
+	        Response -> {id, title,author, publishYear}
+    2.GET [.../book/] - for getting book list.
+            Request ->  [{id, title,author, publishYear}]
+    3.GET [.../book/{id}] - get book by id.
+            Response -> {id, title,author, publishYear}
+    4.DELETE [.../book/{id}] - for deleting book.
+            Response -> true
+    5.PUT [.../book/{id}] - for updating book.
+            Request ->  {title,author, publishYear}
+	        Response -> true
+2. Student
+    1.POST [.../student/] - fore creating student.
+            Request ->  {name, surname,phone, createdDate}
+            Response -> {id, name, surname,phone, createdDate}
+    2.GET [.../student/] - for getting student list.
+            Request ->  [{name, surname,phone, createdDate}]
+    3.GET [.../student/{id}] - get student by id.
+            Response ->  [{id, name, surname,phone, createdDate}]
+    4.DELETE [.../student/{id}] - for deleting student.
+            Response -> true
+    5.PUT [.../student/{id}] - for updating student.
+            Request ->  {name, surname,phone, createdDate}
+            Response -> true
+3. StudentBook
+    1.POST [.../student_book/] - for taking book .
+            Request ->  {studentId, bookId}
+            Response -> {id, studentId,bookId,createdDate,Status,returnedDate}
+    2.PUT [.../student_book] - for returning book .
+            Request ->  {studentId, bookId}
+            Response -> {id, studentId,bookId,createdDate,Status,returnedDate}
+    3.GET [.../student_book/] - for getting student_book list.
+            Response -> {id,studentId,bookId,createdDate,Status,returnedDate}
+    4.GET [.../student_book/{id}] - get student_book by id.
+            Response -> {
+                            id,
+                            student { id, name, surname },
+                            book { id, title },
+                            createdDate,
+                            Status,
+                            returnedDate
+                        }
+    5.GET [.../student_book/student/{studentId}] - return all student taken book
+            Response -> {id,bookId,createdDate,Status,returnedDate}
+    6.GET [.../student_book/book/{bookId}] - return all book taken list
+            Response -> {id, studentId,createdDate,Status,returnedDate}
