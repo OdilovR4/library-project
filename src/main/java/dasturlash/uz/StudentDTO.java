@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -14,5 +16,4 @@ public class StudentDTO {
     private String surname;
     private String phone;
     private LocalDate created_date = LocalDate.now();
-    private BookDTO book;
 }

@@ -3,8 +3,8 @@ POST localhost:8080/book
 Content-Type: application/json
 
 {
-  "author": "Yildiz",
-  "title": "Izlash"
+  "author": "Fotih Duman",
+  "title": "LOL"
 }
 
 

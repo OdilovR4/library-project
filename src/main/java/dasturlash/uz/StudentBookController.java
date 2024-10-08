@@ -12,14 +12,36 @@ public class StudentBookController {
 
     @Autowired
     private StudentBookService studentBookService;
-    @PostMapping("/{id}/{id}")
-    public ResponseEntity<StudentBookDTO>create(@PathVariable String studentId, @PathVariable String bookId) {
-        return ResponseEntity.ok(studentBookService.createStudentBook(studentId,bookId));
+
+    @PostMapping("")
+    public ResponseEntity<StudentBookDTO> create(@RequestBody StudentBookDTO dto) {
+        return ResponseEntity.ok(studentBookService.createStudentBook(dto.getStudentId(), dto.getBookId()));
     }
 
     @GetMapping("")
-    public List<StudentBookDTO> getAllStudentBooks() {
-        return studentBookService.getAll();
+    public ResponseEntity<List<StudentBookDTO>> getAllStudentBooks() {
+        return ResponseEntity.ok(studentBookService.getAll());
     }
+
+    @PutMapping("")
+    public ResponseEntity<?> returning(@RequestBody StudentBookDTO dto) {
+        return ResponseEntity.ok(studentBookService.returning(dto.getStudentId(), dto.getBookId()));
+    }
+
+    @GetMapping("/student/{id}")
+    public ResponseEntity<?> getBookSByStudentId(@PathVariable("id") String studentId) {
+        return ResponseEntity.ok(studentBookService.getBookSByStudentId(studentId));
+    }
+
+    @GetMapping("/book/{id}")
+    public ResponseEntity<?> getStudentsByBookId(@PathVariable("id") String bookId) {
+        return ResponseEntity.ok(studentBookService.getStudentsByBookId(bookId));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getStudentBookById(@PathVariable String id) {
+        return ResponseEntity.ok(studentBookService.getStudentBookById(id));
+    }
+
 
 }

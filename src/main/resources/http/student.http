@@ -3,9 +3,9 @@ POST localhost:8080/student
 Content-Type: application/json
 
 {
-  "name": "Vali",
-  "surname": "Valiyev",
-  "phone": "1222"
+  "name": "Eshmat",
+  "surname": "Eshmatov",
+  "phone": "1212"
 }
 
 ### Get all

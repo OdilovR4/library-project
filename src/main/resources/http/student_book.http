@@ -1,8 +1,30 @@
-### Create student book
-GET localhost:8080/student_book
+### Create student book (require 1)
+POST localhost:8080/student_book
 Content-Type: application/json
 
 {
-  ""
+  "studentId": "251660bb-b02d-4827-96c7-6141e2cdb5d7",
+  "bookId": "5491abeb-8f91-4111-b29e-29f873816261"
 
 }
+
+### Get all studentBook (require 3)
+GET localhost:8080/student_book
+
+### Returning book (require 2)
+PUT localhost:8080/student_book
+Content-Type: application/json
+
+{
+  "studentId": "251660bb-b02d-4827-96c7-6141e2cdb5d7",
+  "bookId": "5491abeb-8f91-4111-b29e-29f873816261"
+}
+
+###GET getBooksByStudentId (require 5)
+GET localhost:8080/student_book/student/wirteId
+
+### GET getStudentsByBookId (require 6)
+GET localhost:8080/student_book/book/writeId
+
+### GET getStudentBookById (require 4)
+GET localhost:8080/student_book/4d831fd8-970d-42aa-80ef-6fda6ecb790d

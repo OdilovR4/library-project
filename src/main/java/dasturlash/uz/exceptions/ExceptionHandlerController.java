@@ -15,4 +15,9 @@ public class ExceptionHandlerController {
     public ResponseEntity<String>handle(StudentBadException e){
         return ResponseEntity.badRequest().body(e.getMessage());
     }
+
+    @ExceptionHandler(StudentBookBadException.class)
+    public ResponseEntity<String>handle(StudentBookBadException e){
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
 }
